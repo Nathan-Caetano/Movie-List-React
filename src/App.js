@@ -12,20 +12,24 @@ function App() {
       setMovies(JSON.parse(storedMovies));
     }
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem('movies', JSON.stringify(movies));
-  }, [movies]);
-
+  
   const addMovie = (movie) => {
-    setMovies([...movies, movie]);
+    const newMovies = [...movies, movie];
+    setMovies(newMovies);
+    localStorage.setItem('movies', JSON.stringify(newMovies));
+  };
+
+  const removeMovie = (index) => {
+    const newMovies = movies.filter((_, i) => i !== index);
+    setMovies(newMovies);
+    localStorage.setItem('movies', JSON.stringify(newMovies));
   };
 
   return (
     <div className="App">
       <h1>Movie List</h1>
       <MovieForm addMovie={addMovie} />
-      <MovieList movies={movies} />
+      <MovieList movies={movies} removeMovie={removeMovie} />
     </div>
   );
 }
