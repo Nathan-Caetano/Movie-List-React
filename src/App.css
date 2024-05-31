@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  text-align: center;
+  background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-04-aluraflix-e-filmes.png");
+  background-color: #000000;
+  color: #ffffff;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.App {
+  padding: 20px;
+}
+
+form {
+  margin: 20px 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #da1e26;
+  font-size: larger;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c41422;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.movie-list img {
+  max-height: 250px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.movie-list img:hover {
+  transform: scale(1.05);
+}
