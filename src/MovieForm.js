@@ -6,13 +6,9 @@ function MovieForm({ addMovie }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (posterUrl.endsWith('jpg')) {
       addMovie({ posterUrl, trailerUrl });
       setPosterUrl('');
       setTrailerUrl('');
-    } else {
-      alert('Favor verificar se a imagem está em jpg');
-    }
   };
 
   return (
