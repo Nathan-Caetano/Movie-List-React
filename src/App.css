@@ -70,16 +70,22 @@ button:hover {
   max-height: 250px;
   border-radius: 10px;
   transition: transform 0.3s;
+  box-shadow: 0px 0px 10px #000000;
+  transition: filter 0.5s;
 }
 
 .movie-item:hover img {
   transform: scale(1.05);
 }
 
-.remove-button {
+.movie-item img.watched {
+  filter: grayscale(100%);
+}
+
+.remove-button,
+.watch-button {
   position: absolute;
   top: 10px;
-  right: 10px;
   background-color: #da1e26;
   color: white;
   border: none;
@@ -95,6 +101,29 @@ button:hover {
   z-index: 1;
 }
 
-.remove-button:hover {
-  background-color: #c41422;
+.remove-button:hover,
+.watch-button:hover {
+  background-color: #a1101c;
+  scale: 1.2;
+  transition: scale 0.3s;
+}
+
+.remove-button {
+  right: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.movie-item:hover .remove-button {
+  opacity: 1;
+}
+
+.watch-button {
+  left: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.movie-item:hover .watch-button {
+  opacity: 1;
 }

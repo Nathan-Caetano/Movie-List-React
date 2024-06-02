@@ -14,7 +14,7 @@ function App() {
   }, []);
   
   const addMovie = (movie) => {
-    const newMovies = [...movies, movie];
+    const newMovies = [...movies, { ...movie, watched: false }];
     setMovies(newMovies);
     localStorage.setItem('movies', JSON.stringify(newMovies));
   };
@@ -25,11 +25,19 @@ function App() {
     localStorage.setItem('movies', JSON.stringify(newMovies));
   };
 
+  const toggleWatched = (index) => {
+    const newMovies = movies.map((movie, i) => (
+      i === index ? { ...movie, watched: !movie.watched } : movie
+    ));
+    setMovies(newMovies);
+    localStorage.setItem('movies', JSON.stringify(newMovies));
+  };
+
   return (
     <div className="App">
       <h1>Movie List</h1>
       <MovieForm addMovie={addMovie} />
-      <MovieList movies={movies} removeMovie={removeMovie} />
+      <MovieList movies={movies} removeMovie={removeMovie} toggleWatched={toggleWatched} />
     </div>
   );
 }
