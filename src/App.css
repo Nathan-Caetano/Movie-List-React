@@ -127,3 +127,13 @@ button:hover {
 .movie-item:hover .watch-button {
   opacity: 1;
 }
+
+@media (pointer: fine) {
+  .remove-button{
+    opacity: 1;
+  }
+
+  .watch-button{
+    opacity: 1;
+  }
+}
