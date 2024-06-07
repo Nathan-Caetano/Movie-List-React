@@ -128,7 +128,7 @@ button:hover {
   opacity: 1;
 }
 
-@media (pointer: fine) {
+@media (pointer: coarse) {
   .remove-button{
     opacity: 1;
   }
